@@ -135,6 +135,11 @@
                     "uniqueItems": true,
                     "default": [],
                     "markdownDescription": "A list of Bazel command line options to use when building or running tests. From the [common options](https://docs.bazel.build/versions/master/command-line-reference.html#options-common-to-all-commands) and [build options](https://docs.bazel.build/versions/master/command-line-reference.html#build) (`test` honors all `build` options). One option per entry, no shell escaping is needed."
+                },
+                "bazel.showCodeLens": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show the VSCode-Bazel codelens."
                 }
             }
         },

@@ -61,6 +61,13 @@ export class BazelBuildCodeLensProvider implements vscode.CodeLensProvider {
     document: vscode.TextDocument,
     token: vscode.CancellationToken,
   ): Promise<vscode.CodeLens[]> {
+
+    const bazelConfig = vscode.workspace.getConfiguration("bazel");
+    const showCodeLens = bazelConfig.get("showCodeLens");
+    if(!showCodeLens){
+      return [];
+    }
+
     if (document.isDirty) {
       // Don't show code lenses for dirty BUILD files; we can't reliably
       // determine what the build targets in it are until it is saved and we can
